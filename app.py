@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-URL = "https://5000-azure-beetle-snezyg3i.ws-us18.gitpod.io"
+URL = "https://5000-white-koi-rrbipomd.ws-us17.gitpod.io"
 
 vendas = [
     {"id": 1, "name": "Lucas Alixame", "product": "Camiseta Azul - G", "price": 25.00 },
@@ -125,7 +125,7 @@ def search():
         Percorrendo a lista, salvando na nova lista os elementos pesquisados
     """
     for indice, venda in enumerate(vendas):
-        if search in venda["name"] or search in venda["product"]:
+        if search.lower() in venda["name"].lower() or search.lower() in venda["product"].lower():
             listaPesquisa.append(venda)
 
     """
